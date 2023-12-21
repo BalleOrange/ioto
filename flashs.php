@@ -18,9 +18,10 @@
         echo '<div class="d-flex">';
         while($enregistrement = $stmt->fetch(PDO::FETCH_OBJ))
         {
-            echo '<div class="card text-center" style="width:auto">';
+            echo '<div class="card text-center border-0" style="width:auto">';
             echo '<img class="card-img-top" src="img/'. $enregistrement->image .'" alt="Image invalide">';
             echo '<div class="card-body">';
+            if(isset($_SESSION['loggedin']))
             {
                 echo '<form method="post">';
                 echo '<input type="submit" class="btn btn-outline-secondary" name="supprimer_'.$enregistrement->numero.'" value="Supprimer">';
