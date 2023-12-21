@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Flashs</a>
+                        <a class="nav-link" href="flashs.php">Flashs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">Link</a>
@@ -29,7 +29,26 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="connexion.php" class="btn btn-primary">Se connecter</a>
+                    <?php
+                        if($_SESSION['loggedin'])
+                        {
+                            echo '<a href="connexion.php" class="btn btn-outline-secondary">Gestion</a>';
+                            echo '<form method="post">';
+                            echo '<input type="submit" class="btn btn-outline-secondary mx-3" name="deconnexion" value="Déconnexion">';
+                            echo '</form>';
+                            if(isset($_POST["deconnexion"]))
+                            {
+                                session_destroy();
+                                header("Location: index.php");
+                                exit();
+                            }
+                        }
+                        else
+                        {
+                            echo '<a href="connexion.php" class="btn btn-primary">Se connecter</a>';
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>

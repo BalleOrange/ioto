@@ -1,16 +1,31 @@
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'Imprint';
 	src: url('ImprintMTShadow.ttf') format('truetype');
 }
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Imprint', sans-serif;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Imprint', sans-serif;
 }
 
 .test {
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.testbody {
+    background-image: url('img/test.jpg'); /* Remplacez par le chemin vers votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'arrière-plan */
+    background-position: center; /* Positionne l'image au centre de l'arrière-plan */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    color: blue; /* Couleur du texte */
+    font-family: 'Imprint', sans-serif; /* Police du texte */
+    padding: 50px; /* Ajoute de l'espace autour du contenu pour améliorer la lisibilité */
+}
+
+.contentt {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 100px; /* Ajuste la marge en haut pour centrer le texte verticalement */
 }
